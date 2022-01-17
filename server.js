@@ -56,6 +56,8 @@ function filterByQuery(query, animalsArray) {
     return filteredResults;
 }
 
+const PORT = process.env.PORT || 3001;
+
 app.get('/api/animals', (req, res) => {
     let results = animals;
     if (req.query) {
@@ -64,6 +66,6 @@ app.get('/api/animals', (req, res) => {
     res.json(results);
 });
 
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on ${PORT}`);
 });
